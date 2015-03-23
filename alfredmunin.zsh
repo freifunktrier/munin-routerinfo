@@ -105,7 +105,7 @@ cached.draw STACK
 free.draw STACK
 EOM
   for i in used buffers cached free
-    do echo "$i.type DERIVE"
+    do echo "$i.type GAUGE"
     echo "$i.min 0"
   done
 }
@@ -154,23 +154,23 @@ graph_title Traffic for $HOSTNAME
 graph_args --base 1000
 graph_vlabel bits in (-) / out (+) per ${graph_period}
 rx.label rx bps
-rx.type COUNTER
+rx.type DERIVE
 rx.graph no
 rx.cdef rx,8,*
 tx.label tx bps
-tx.type COUNTER
+tx.type DERIVE
 tx.negative rx
 tx.cdef tx,8,*
 mgmt_rx.label mrx bps
-mgmt_rx.type COUNTER
+mgmt_rx.type DERIVE
 mgmt_rx.graph no
 mgmt_rx.cdef mgmt_rx,8,*
 mgmt_tx.label mtx bps
-mgmt_tx.type COUNTER
+mgmt_tx.type DERIVE
 mgmt_tx.negative mgmt_rx
 mgmt_tx.cdef mgmt_tx,8,*
 forward.label forward bps
-forward.type COUNTER
+forward.type DERIVE
 forward.cdef forward,8,*
 EOM
 }
