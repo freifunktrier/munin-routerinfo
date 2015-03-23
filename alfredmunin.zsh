@@ -124,9 +124,10 @@ EOM
 config_uptime(){ cat <<EOM
 graph_title Uptime for $HOSTNAME
 graph_args --base 1000 -l 0
-graph_vlabel seconds
+graph_vlabel days
 graph_category system
 uptime.label uptime
+uptime.cdef uptime,86400,/
 EOM
 }
 
