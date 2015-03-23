@@ -179,7 +179,7 @@ EOM
 
 case $1 in
    config) # --upper-limit $memtotal
-        echo "host_name $MAC"
+        echo "host_name $(echo $MAC | tr -d :)"
         config_$MODE $MAC
         exit 0;;
    symlink_install)
