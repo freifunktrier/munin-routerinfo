@@ -107,6 +107,7 @@ EOM
   for i in used buffers cached free
     do echo "$i.type GAUGE"
     echo "$i.min 0"
+    echo "$i.cdef $i,1000,*
   done
 }
 
