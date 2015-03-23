@@ -24,13 +24,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 EOL
-ALFRED_JSON="alfred-json"
 
+ALFRED_JSON="alfred-json"
 
 MAC="$(basename "$0" | cut -d_ -f 2)"
 MODE="$(basename "$0" | cut -d_ -f 3)"
 
-####fixme
 HOSTNAME="$($ALFRED_JSON -z -r 158 | jq ".[\"$MAC\"].hostname" -)"
 
 fetch_json(){
