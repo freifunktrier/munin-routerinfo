@@ -163,14 +163,14 @@ rx.label client bps
 rx.type DERIVE
 rx.cdef rx,8,*
 rx.negative tx
+mgmt_rx.label mrx bps
+mgmt_rx.type DERIVE
+mgmt_rx.graph no
+mgmt_rx.cdef mgmt_rx,8,*
 mgmt_tx.label mgmt bps
 mgmt_tx.type DERIVE
-mgmt_tx.graph no
+mgmt_tx.negative mgmt_rx
 mgmt_tx.cdef mgmt_tx,8,*
-mgmt_rx.label mgmt bps
-mgmt_rx.type DERIVE
-mgmt_rx.negative mgmt_tx
-mgmt_rx.cdef mgmt_rx,8,*
 forward.label forward bps
 forward.type DERIVE
 forward.cdef forward,8,*
