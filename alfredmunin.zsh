@@ -155,22 +155,22 @@ config_traffic(){ cat <<EOM
 graph_title Traffic for $HOSTNAME
 graph_args --base 1000
 graph_vlabel bits in (-) / out (+) per \${graph_period}
-rx.label client bps
-rx.type DERIVE
-rx.cdef rx,8,*
-rx.negative tx
 tx.label client bps
 tx.type DERIVE
 tx.graph no
 tx.cdef tx,8,*
-mgmt_rx.label mgmt bps
-mgmt_rx.type DERIVE
-mgmt_rx.negative mgmt_tx
-mgmt_rx.cdef mgmt_rx,8,*
+rx.label client bps
+rx.type DERIVE
+rx.cdef rx,8,*
+rx.negative tx
 mgmt_tx.label mgmt bps
 mgmt_tx.type DERIVE
 mgmt_tx.graph no
 mgmt_tx.cdef mgmt_tx,8,*
+mgmt_rx.label mgmt bps
+mgmt_rx.type DERIVE
+mgmt_rx.negative mgmt_tx
+mgmt_rx.cdef mgmt_rx,8,*
 forward.label forward bps
 forward.type DERIVE
 forward.cdef forward,8,*
