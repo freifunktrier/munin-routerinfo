@@ -159,21 +159,26 @@ tx.label client bps
 tx.type DERIVE
 tx.graph no
 tx.cdef tx,8,*
+tx.min 0
 rx.label client bps
 rx.type DERIVE
 rx.cdef rx,8,*
 rx.negative tx
+rx.min 0
 mgmt_rx.label mrx bps
 mgmt_rx.type DERIVE
 mgmt_rx.graph no
 mgmt_rx.cdef mgmt_rx,8,*
+mgmt_rx.min 0
 mgmt_tx.label mgmt bps
 mgmt_tx.type DERIVE
 mgmt_tx.negative mgmt_rx
 mgmt_tx.cdef mgmt_tx,8,*
+mgmt_tx.min 0
 forward.label forward bps
 forward.type DERIVE
 forward.cdef forward,8,*
+forward.min 0
 EOM
 }
 
