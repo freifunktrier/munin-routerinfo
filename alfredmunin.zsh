@@ -187,10 +187,17 @@ case $1 in
         echo "host_name $(echo $MAC | tr -d :)"
         config_$MODE $MAC
         exit 0;;
+
    symlink_install)
         for i in clients loadavg memory processes traffic uptime
           do ln -s $(readlink -f "$0") /etc/munin/plugins/alfred_$2_$i
         done
+
+        echo "" >> /etc/munin/munin.conf
+        echo "[localhost.localdomain;$(echo $2 | tr -d :)]" >> /etc/munin/munin.conf
+        echo "    address 127.0.0.1" >> /etc/munin/munin.conf
+
+        service munin-node reload
         exit 0;;
 esac
 
